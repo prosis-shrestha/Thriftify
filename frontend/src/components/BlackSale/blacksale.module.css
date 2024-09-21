@@ -1,0 +1,19 @@
+.blackSale {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.blackSale_header {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--main_color);
+}
+.blackSale_header:hover{
+  color: black;
+}
+.productWrapper {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
