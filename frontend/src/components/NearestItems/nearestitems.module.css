@@ -1,0 +1,45 @@
+.nearestItems {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  /* gap: 2rem; */
+  position: relative;
+  /* margin-top: 0.5rem; */
+}
+.nearestItems_header {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--main_color);
+}
+.productWrapper {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  max-width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.productWrapper > * {
+  flex: 0 0 auto; /* Prevent flex items from shrinking */
+}
+.productWrapper::-webkit-scrollbar {
+  display: none;
+}
+.rightButton {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 10; /* Ensure the button is above other content */
+}
+
+.rightButton:hover {
+  background: var(--main_color);
+  color: white;
+}
