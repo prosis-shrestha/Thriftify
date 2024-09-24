@@ -1,0 +1,42 @@
+.topNav{
+    /* background-color: red; */
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 2rem;;
+    background-color: white;
+    border-bottom: 1px solid var(--border_color);
+
+}
+.left_info{
+    display: flex;
+    align-items: center;
+}
+.right_info{
+    display: flex;
+    gap: 1rem;
+}
+.nav_items{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+.nav_items li a{
+    text-decoration: none;
+    color: inherit;
+    font-size: 13px;
+}
+.nav_btn{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0 6px;
+    cursor: pointer;
+}
+
+.sign_up_btn{
+     border-left: 1px solid var(--border_color);
+     border-right: 1px solid var(--border_color);
+
+ }
