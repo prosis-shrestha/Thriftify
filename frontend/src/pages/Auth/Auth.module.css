@@ -1,0 +1,727 @@
+.AuthWrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255);
+  position: relative;
+}
+.logo {
+  width: 50px;
+  position: absolute;
+  top: 1rem;
+  cursor: pointer;
+  left: 2rem;
+  transition: all 0.3s ease;
+}
+.logo:hover {
+  scale: 1.08;
+}
+.dinasour_image {
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  opacity: 0.7;
+  width: 200px;
+}
+
+.login_main_box {
+  width: 95%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+.logo_img {
+  width: 200px;
+  object-fit: cover;
+}
+.login_welcome_text {
+  text-align: center;
+}
+.comapany_name {
+  font-size: xx-large;
+  font-weight: bolder;
+}
+.welcome_back_text {
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 100;
+  color: #686de0;
+}
+.welcome_secondary_text {
+  color: rgb(99, 109, 126);
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+.login_with_google_box {
+  justify-content: center;
+  height: 40px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  border: 1px solid rgb(234, 239, 245);
+  transition: all 0.6s ease;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0px 0px 3px white;
+}
+.login_with_google_box:hover {
+  border-color: rgb(210 216 224);
+  box-shadow: 0px 0px 3px #686de0;
+}
+.login_with_google_box img {
+  width: 25px;
+  height: 25px;
+}
+.login_with_google_box p {
+  font-size: 14px;
+}
+
+.sign_in_with_email_division {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+.sign_in_with_email_division p {
+  font-size: 12px;
+  color: rgb(149, 159, 178);
+}
+.left_hr,
+.right_hr {
+  height: 1px;
+  background-color: rgb(234, 239, 245);
+  flex: 1;
+}
+.form_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  align-items: center;
+}
+.single_item {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  gap: 10px;
+}
+
+.auth_input_item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+  flex: 1;
+}
+.auth_input_item label {
+  font-size: 13px;
+  color: #686de0;
+}
+.auth_input_item .input_element {
+  border: 1px solid rgb(234, 239, 245);
+  border-radius: 5px;
+  height: 40px;
+  width: 100%;
+  outline: none;
+  padding: 0 10px;
+  transition: all 0.5s;
+  box-shadow: 0px 0px 3px white;
+  font-size: 13px;
+  color: rgb(99, 109, 126);
+}
+.auth_input_item .input_element::placeholder {
+  color: rgba(128, 128, 128, 0.678);
+  font-size: 12px;
+  letter-spacing: 0.3px;
+}
+.auth_input_item .input_element:focus {
+  box-shadow: 0px 0px 3px #686de0;
+}
+.auth_input_item .input_element :hover {
+  box-shadow: 0px 0px 3px #686de0;
+}
+.error_input {
+  border: none !important;
+  box-shadow: #ff0000b8 0px 0px 1px 1px !important;
+}
+.bottom_other_options {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.checkbox_item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.checkbox_item p {
+  color: rgb(99, 109, 126);
+}
+.checkbox_item input {
+  width: 14px;
+  height: 14px;
+}
+.forgot_password_text {
+  color: #3f51b5;
+  cursor: pointer;
+}
+.login_button {
+  background-color: #686de0;
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 42px;
+  border-radius: 3px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+}
+.no_account_text {
+  color: #3f51b5;
+  cursor: pointer;
+  font-size: 12px;
+}
+.country_flag {
+  width: 27px;
+}
+.country_name {
+  font-size: 12px;
+}
+.country_item {
+  padding: 10px 0;
+}
+.country_item:hover {
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+/* CONFIRMATION EMAIL SENT   FILE  CSS */
+.confirmation_email_sent_page {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+.confimation_email_sent_box {
+  background-color: rgba(232, 235, 238, 0.673);
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  padding: 1rem;
+  gap: 10px;
+}
+
+.email_sent_content_box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.email_sent_content_box .email_desc {
+  font-size: 13px;
+  width: 95%;
+  color: rgb(76, 76, 76);
+}
+.confimation_email_sent_box > img {
+  width: 210px;
+}
+.email_sent_alert_box {
+  border-radius: 5px;
+  letter-spacing: 1px;
+  font-weight: 100;
+  font-size: 1.5rem;
+  color: var(--dark_primary_text_color);
+
+  margin-bottom: 1rem !important;
+  font-weight: bold;
+
+  width: 100%;
+}
+.user_email_text {
+  font-size: 11px;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  color: rgb(76, 76, 76);
+  display: block;
+}
+.resent_button {
+  background-color: var(--primary_color);
+  height: 40px;
+
+  font-size: 12px;
+  border-radius: 3px;
+  padding: 0 10px;
+  letter-spacing: 1px;
+  color: white;
+  margin: 2rem 0;
+}
+.resent_email_expires_time {
+  color: gray;
+  font-weight: 100;
+  font-size: 9px;
+  width: 80%;
+  letter-spacing: 1px;
+}
+/* sent email for reset password page */
+
+.sentEmailForPasswordPage {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reset_email_main_content {
+  flex: 6;
+  /* background-color: rgba(232, 235, 238, 0.673); */
+}
+
+.reset_email_main_content > form {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  align-items: center;
+  padding: 1rem;
+  gap: 7px;
+  border-radius: 15px;
+}
+.reset_email_main_content > form > p {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 21px;
+  margin-bottom: 2rem !important;
+  color: rgb(77, 76, 76);
+}
+.email_reset_image_wrapper {
+  flex: 6;
+}
+.sentEmailForPasswordPage > div > img {
+  width: 80%;
+}
+
+.reset_password_heading_text {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: var(--primary_color);
+  font-weight: bold;
+}
+.reset_link_email {
+  background-color: rgb(249, 252, 255);
+  border-radius: 5px;
+  width: 100%;
+  font-size: 12px;
+  outline: none;
+  height: 45px;
+  padding: 0 10px;
+}
+.reset_link_email::placeholder {
+  font-size: 12px;
+  color: rgb(170, 170, 170);
+  letter-spacing: 1px;
+}
+.reset_link_email_button,
+.verify_email_button {
+  background-color: var(--primary_color);
+  height: 37px;
+  color: white;
+  margin: 1rem 0;
+  border-radius: 4px;
+  padding: 0 1rem;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+.reset_link_email_button:hover {
+  scale: 1.04;
+  background-color: #04097d;
+}
+
+/* RESET PASSWORD */
+
+.reset_password_page {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.reset_password_content {
+  display: flex;
+  width: 95%;
+  max-width: 400px;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  align-items: center;
+  padding: 2rem;
+  gap: 5px;
+  border-radius: 15px;
+}
+.reset_password_heading_text {
+  font-size: 1.7rem;
+  font-weight: 700;
+  font-family: "poppins";
+  color: var(--primary_color);
+}
+.reset_password_inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 2rem;
+  width: 100%;
+}
+.reset_password_inputs input {
+  width: 100%;
+  background-color: rgba(241, 243, 245, 0.735);
+  height: 40px;
+  font-size: 12px;
+  border-radius: 3px;
+
+  padding: 0 5px;
+  letter-spacing: 1px;
+}
+.reset_password_inputs input::placeholder {
+  color: rgb(170, 170, 170);
+}
+.reset_password_desc {
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 11px;
+  color: gray;
+  line-height: 20px;
+}
+.reset_password_content > button {
+  background-color: var(--primary_color);
+  color: white;
+  font-size: 14px;
+  letter-spacing: 1px;
+
+  height: 40px;
+  margin-top: 1rem;
+  padding: 0 15px;
+  border-radius: 6px;
+}
+.resend_bottom_text {
+  font-size: 12px;
+  display: flex;
+
+  margin: auto;
+  margin-top: 1rem;
+  position: absolute;
+  color: gray;
+  left: 0;
+  letter-spacing: 1px;
+  gap: 5px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  bottom: 2rem;
+}
+.resent_link_main {
+  color: var(--primary_color);
+  cursor: pointer;
+  display: block;
+  text-decoration: underline;
+  transition: all 0.3s ease-in-out;
+}
+.resent_link_main:hover {
+  color: #04097d !important;
+}
+
+.verify_account_text {
+  text-decoration: underline;
+  transition: all 0.3s ease-in-out;
+}
+.verify_account_text:hover {
+  scale: 1.03;
+  color: #05085c !important;
+}
+
+/* verify email page*/
+
+.verify_email_page {
+  display: flex;
+  height: 100vh;
+  width: 90%;
+
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+.verify_image_wrapper {
+  flex: 5;
+}
+.verify_image_wrapper > img {
+  width: 100%;
+}
+.verify_content_box {
+  flex: 7;
+  display: flex;
+  justify-content: flex-end;
+}
+.verify_main_content {
+  display: flex;
+  width: 80%;
+
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+.verify_main_content input {
+  width: 100%;
+  background-color: rgba(241, 243, 245, 0.735);
+  height: 40px;
+  font-size: 12px;
+  border-radius: 3px;
+
+  padding: 0 5px;
+  letter-spacing: 1px;
+}
+.verify_main_content input::placeholder {
+  color: rgb(170, 170, 170);
+}
+
+.email_verify_top_head {
+  margin-bottom: 2rem;
+}
+.country_input {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+}
+
+.country_input p {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  padding: 0 5px;
+
+  align-items: center;
+}
+/*
+     in mobile and tab mode make
+     .reset_email_main_content > form 
+     width 95% or accordingly and  
+    .email_reset_image_wrapper ->display none
+    
+     */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .AuthWrapper {
+    margin: 0;
+  }
+  .login_main_box {
+    margin-top: -2rem;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 769px) {
+  .AuthWrapper {
+    margin: 0;
+  }
+  .login_button {
+    font-weight: 500;
+  }
+  .verify_content_box {
+    justify-content: center;
+  }
+  .verify_email_page {
+    flex-direction: column;
+  }
+  .verify_image_wrapper > img {
+    height: 185px;
+  }
+  .verify_main_content {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  .email_sent_alert_box {
+    font-size: 1.2rem;
+  }
+  .email_sent_content_box .email_desc {
+    font-size: 12px;
+  }
+  .reset_link_email_button,
+  .verify_email_button {
+    height: 35px;
+    font-size: 12px;
+  }
+  .verify_image_wrapper {
+    margin-top: 1rem;
+  }
+  .email_reset_image_wrapper {
+    display: none;
+  }
+  .reset_email_main_content {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 600px) {
+  .AuthWrapper {
+    margin: 0;
+  }
+  .login_button {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .verify_image_wrapper {
+    display: none;
+  }
+  .verify_content_box {
+    justify-content: center;
+  }
+  .email_reset_image_wrapper {
+    display: none;
+  }
+  .reset_email_main_content {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .resend_bottom_text {
+    bottom: 5rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .AuthWrapper {
+    margin: 0;
+  }
+  .single_item {
+    flex-direction: column;
+  }
+
+  .login_with_google_box img {
+    width: 16px;
+  }
+  .login_with_google_box p {
+    font-size: 12px;
+  }
+  .sign_in_with_email_division p {
+    font-size: 11px;
+  }
+
+  .form_wrapper {
+    width: 80%;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+  }
+  .logo_img {
+    /* display: none; */
+    width: 120px;
+  }
+  .auth_input_item .input_element {
+    height: 35px;
+    font-size: 10px;
+  }
+  .auth_input_item .input_element::placeholder {
+    font-size: 10px;
+  }
+  .login_button {
+    height: 35px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .no_account_text {
+    font-size: 11px;
+  }
+  .bottom_other_options {
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .login_button {
+    height: 32px;
+    font-size: 12px;
+  }
+  .login_with_google_box {
+    height: 32px;
+    font-size: 12px;
+  }
+  .auth_input_item label {
+    font-size: 11px;
+  }
+  .verify_image_wrapper {
+    display: none;
+  }
+  .verify_content_box {
+    justify-content: center;
+  }
+  .verify_main_content {
+    width: 95%;
+    padding: 1rem;
+  }
+  .email_sent_alert_box {
+    font-size: 1.1rem;
+  }
+  .email_sent_content_box .email_desc {
+    font-size: 11px;
+  }
+  .resent_email_expires_time {
+    width: 90%;
+  }
+  .reset_link_email_button,
+  .verify_email_button {
+    background-color: var(--primary_color);
+    height: 34px;
+    margin: 0.8rem 0;
+    font-size: 11px;
+  }
+  .email_reset_image_wrapper {
+    display: none;
+  }
+  .reset_email_main_content {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .reset_email_main_content > form {
+    width: 85%;
+  }
+  .reset_password_heading_text {
+    font-size: 1.4rem;
+  }
+  .reset_email_main_content > form > p {
+    font-size: 11px;
+    margin-bottom: 1rem !important;
+  }
+  .confimation_email_sent_box > img {
+    display: none;
+  }
+  .resent_button {
+    height: 36px;
+    font-size: 10px;
+    margin: 0.8rem 0;
+  }
+  .resend_bottom_text {
+    font-size: 11px;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    bottom: 6rem;
+  }
+}

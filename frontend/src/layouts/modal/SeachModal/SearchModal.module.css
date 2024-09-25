@@ -1,0 +1,28 @@
+.searchContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.searchInput{
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    color: gray;
+}
+.searchInput::placeholder{
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: gray;
+}
+.searchBox{
+    display: flex;
+    gap: 1rem;
+    height: 80px;
+    width: 100%;
+}
+.searchBox img{
+    width: 100px;
+    /* height:  ; */
+    height: 80px;
+    object-fit: contain;
+}
