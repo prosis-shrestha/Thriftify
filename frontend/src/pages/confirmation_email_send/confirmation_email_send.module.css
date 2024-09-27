@@ -1,0 +1,52 @@
+.confirmation_email_send_container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emailSend_Wrapper{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+    padding: 2rem;
+}
+.emailSend_Wrapper h2{
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+}
+.emailSend_Wrapper p{
+    text-align: center;
+}
+.emailSentImg{
+    width: 180px;
+}
+.checkPara{
+    font-size: 14px;
+
+}
+
+
+.emailBtn{
+    border: none;
+    outline: none;
+    background-color: var(--main_color);
+    padding: 10px 1rem;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.notReceivePara{
+    font-size: 12px;
+    color:grey
+}

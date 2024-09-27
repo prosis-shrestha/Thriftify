@@ -1,0 +1,42 @@
+.confirmation_container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.confirmation_box{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    padding: 2rem;
+    gap: 1rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+}
+.confirmation_box p{
+    font-size: 13px;
+    color:grey;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.confirm_img{
+    width: 180px;
+}
+.confirmBtn{
+    border: none;
+    outline: none;
+    background-color: var(--main_color);
+    padding: 10px 1rem;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+.warning{
+    font-size: 10px !important;
+    color: red !important; 
+
+}
