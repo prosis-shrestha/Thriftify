@@ -1,0 +1,31 @@
+import CategoryItem from "./CategoryItem/CategoryItem";
+import styles from "./category.module.css";
+// import {products} from "../../utils/Data"
+import { allCategoryApi } from "../../utils/api";
+import { useState, useEffect } from "react";
+
+const Category = () => {
+  const [allCategory, setAllCategory] = useState([]);
+  useEffect(() => {
+    categoryFetching();
+  }, []);
+  const categoryFetching = async () => {
+    try {
+      const { data, status } = await allCategoryApi();
+      if (status === 200) {
+        setAllCategory(data.message);
+      }
+    } catch (error: any) {
+      console.log(error.message);
+    }
+  };
+  return (
+    <div className={styles.Category}>
+      {allCategory.map((product) => {
+        return <CategoryItem key={product._id} product={product} />;
+      })}
+    </div>
+  );
+};
+
+export default Category;

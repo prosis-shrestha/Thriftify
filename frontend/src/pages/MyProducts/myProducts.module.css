@@ -1,0 +1,74 @@
+.topPart {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  color: var(--main_color);
+}
+.topPart p {
+  font-size: 25px;
+  font-weight: 600;
+}
+.currentListings {
+  display: flex;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.no {
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttons {
+  position: fixed;
+  right: 5vw;
+  width: 90vw;
+  bottom: 2rem;
+  height: 5rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.info {
+  margin-right: 14rem;
+}
+.soldButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 7rem;
+  font-size: 14px;
+  border-radius: 4px;
+  color: white;
+  background-color: var(--main_color);
+  letter-spacing: 1px;
+}
+.tabs {
+  display: flex;
+  color: var(--main_color);
+}
+.tabs button {
+  height: 40px;
+  width: 10rem;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: 1px solid var(--main_color);
+}
+.activeTab {
+  color: white;
+  background-color: var(--main_color);
+}
+.currentListings {
+  display: flex;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
