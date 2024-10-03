@@ -1,0 +1,52 @@
+.userCard {
+  height: 25vh;
+  display: flex;
+  padding: 1rem;
+  /* background-color: aqua; */
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.profile_info {
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+.profile_info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+.userName {
+  color: var(--main_color);
+  font-weight: 600;
+}
+.userEmail {
+  font-size: 14px;
+}
+.secondCard {
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.addressItem {
+  display: flex;
+  gap: 5px;
+  width: 9rem;
+}
+.thridCard {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
