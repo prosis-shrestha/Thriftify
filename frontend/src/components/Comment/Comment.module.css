@@ -1,0 +1,45 @@
+.commentItem {
+  margin: 0 1rem;
+  padding: 1rem;
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+  border-radius: 3px;
+  background-color: white;
+}
+.commentTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.leftTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.leftTop img {
+  width: 45px;
+  background-color: var(--border_color);
+  border-radius: 5px;
+  height: 45px;
+  object-fit: cover;
+}
+.userPrimaryInfo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.userPrimaryInfo h3 {
+  font-size: 14px;
+  color: var(--main_color);
+}
+.userPrimaryInfo p {
+  font-size: 10px;
+}
+
+.rightTop p {
+  font-size: 12px;
+}
+.commentDown p {
+  font-size: 13px;
+  margin-top: 8px;
+}

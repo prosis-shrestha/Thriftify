@@ -1,0 +1,27 @@
+.commentWrapper {
+  display: flex;
+  width: 100%;
+  /* padding-left: 5rem; */
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.commentWrapper input {
+  width: 100%;
+  height: 50px;
+}
+.commentWrapper input::placeholder {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.commentWrapper button {
+  background: var(--main_color);
+  padding: 0 1rem;
+  border-radius: 4px;
+  height: 50px;
+  letter-spacing: 1px;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: white;
+}
