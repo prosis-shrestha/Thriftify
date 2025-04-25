@@ -4,15 +4,12 @@ import { useContext } from "react";
 import SignOutPopover from "../popover/signout popover/SignOutPopover";
 import { Link } from "react-router-dom";
 import SearchModal from "../../layouts/modal/SeachModal/SearchModal";
+import { FaFacebookMessenger, FaSearch } from "react-icons/fa";
 
 const Navbar = () => {
   const {
     state: { user },
   } = useContext(ThriftContext);
-
-  // const {
-  //   state: { user, notifications },
-  // } = useContext(ThriftContext);
 
   return (
     <div className={styles.navbar}>
@@ -23,17 +20,16 @@ const Navbar = () => {
       <div className={styles.others}>
         <div>
           <SearchModal full={true}>
-            <div className={styles.search}>🔍 </div>
+            <div className={styles.search}>
+              <FaSearch />{" "}
+            </div>
           </SearchModal>
         </div>
         {user ? (
           <>
             {user && (
               <Link to={"/chat"} className={styles.message}>
-                💬
-                {/* {notifications && notifications.mainUser !== user._id && (
-                  <span className={styles.notification}></span>
-                )} */}
+                <FaFacebookMessenger />
               </Link>
             )}
             <Link to={"/upload"} className={styles.sellButton}>

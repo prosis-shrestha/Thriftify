@@ -1,0 +1,38 @@
+.chat-user {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+.chat-user:hover {
+  background-color: #f0f0f0;
+}
+.chat-user.selected {
+  background-color: #e0e0e0;
+}
+.chat-user.unread {
+  background-color: rgba(230, 247, 255, 0.4);
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.normal-text {
+  font-weight: normal;
+}
+
+.unread-badge {
+  background-color: #1890ff;
+  color: white;
+  border-radius: 50%;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  padding: 0 6px;
+}

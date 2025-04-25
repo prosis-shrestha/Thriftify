@@ -19,7 +19,7 @@ const io = new Server(server, {
 });
 
 io.on("connection", (socket) => {
-  console.log("a user connected");
+  console.log("socket on");
 
   socket.on("joinRoom", async ({ userId, recipientId }) => {
     const room = [userId, recipientId].sort().join("_");
@@ -48,7 +48,7 @@ io.on("connection", (socket) => {
   );
 
   socket.on("disconnect", () => {
-    console.log("user disconnected");
+    console.log("socket off");
   });
 });
 
