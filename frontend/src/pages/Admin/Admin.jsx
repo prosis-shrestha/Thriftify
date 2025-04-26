@@ -3,7 +3,6 @@ import AdminNavbar from "../../components/AdminNavbar/AdminNavbar";
 import styles from "./admin.module.css";
 import { ThriftContext } from "../../context/Context";
 import { getAllProductApi, deleteProductApi, updateProductApi } from "../../utils/api";
-// import { getAllProductApi } from "../../utils/api";
 import { useNavigate } from "react-router-dom";
 
 const Admin = () => {
@@ -29,7 +28,8 @@ const Admin = () => {
 
 
     useEffect(() => {
-        if (user?.isAdmin === false) {
+        // Redirect if user is not logged in or is not an admin
+        if (!user || !user.isAdmin) {
             navigate("/");
         }
     }, [user, navigate]);

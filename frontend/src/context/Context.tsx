@@ -4,25 +4,21 @@ type UserType = {
   username: string;
   email: string;
   about: string;
+  isAdmin: boolean;
+  image?: string;
+  _id?: string;
+  city?: string;
+  contact?: string;
 };
-
-// interface NotificationType {
-//   room: string;
-//   mainUser: string;
-// }
 
 interface ThriftState {
   user: UserType | null;
   refresh: boolean;
-  //   notifications: NotificationType | null;
-  //   currentNotification: NotificationType | null;
 }
 
 const initialState: ThriftState = {
   user: null,
   refresh: false,
-  // notifications: null,
-  // currentNotification: null,
 };
 
 type ThriftContextValue = {
@@ -34,8 +30,6 @@ type ThriftAction =
   | { type: "addUser"; payload: UserType }
   | { type: "removeUser" }
   | { type: "setRefresh" };
-// | { type: "ADD_NOTIFICATION"; payload: NotificationType }
-// | { type: "CURRENT_NOTIFICATION"; payload: NotificationType };
 
 export const ThriftContext = React.createContext<
   ThriftContextValue | undefined
@@ -52,26 +46,16 @@ const thriftReducer = (state: ThriftState, action: ThriftAction) => {
     case "setRefresh":
       return { ...state, refresh: !state.refresh };
 
-    // case "ADD_NOTIFICATION":
-    //   return {
-    //     ...state,
-    //     notifications: action.payload,
-    //   };
-
-    // case "CURRENT_NOTIFICATION":
-    //   return {
-    //     ...state,
-    //     notifications: null,
-    //   };
-
     default:
       return state;
   }
 };
-type thriftContextProviderType = {
+
+type ThriftContextProviderProps = {
   children: React.ReactNode;
 };
-export const ThriftContextProvider: React.FC<thriftContextProviderType> = ({
+
+export const ThriftContextProvider: React.FC<ThriftContextProviderProps> = ({
   children,
 }) => {
   const [state, dispatch] = useReducer(thriftReducer, initialState);

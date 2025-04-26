@@ -7,11 +7,10 @@ import Login from "./pages/Auth/Login/Login";
 import Upload from "./pages/upload/Upload";
 import { useContext } from "react";
 import { ThriftContext } from "./context/Context";
-import axiosInstance from "./utils/axios";
 import { getSessionUser } from "./utils/api";
 import { useEffect } from "react";
 import Transaction from "./pages/transaction/Transaction";
-import AllProducts from "./pages/AllProducts/allProducts";
+import AllProducts from "./pages/AllProducts/AllProducts";
 import Confirmation from "./pages/confirmation/Confirmation";
 import Confirmation_email_send from "./pages/confirmation_email_send/Confirmation_email_send";
 import Verify from "./pages/verify/Verify";
@@ -21,14 +20,21 @@ import MyProducts from "./pages/MyProducts/MyProducts";
 import Admin from "./pages/Admin/Admin";
 import BoostCheckout from "./pages/BoostCheckout/BoostCheckout";
 import PaymentSuccess from "./pages/PaymentSuccess/PaymentSuccess";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 function App() {
-  const { state, dispatch } = useContext(ThriftContext);
-  // console.log(state)
+  const context = useContext(ThriftContext);
+
+  if (!context) {
+    throw new Error("App must be used within ThriftContextProvider");
+  }
+
+  const { dispatch } = context;
 
   useEffect(() => {
     fetchSessionUser();
   }, []);
+
   const fetchSessionUser = async () => {
     try {
       const { data, status } = await getSessionUser();
@@ -63,7 +69,14 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/chat" element={<ChatList />} />
           <Route path="/myProducts" element={<MyProducts />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute requireAdmin={true}>
+                <Admin />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/boostCheckout" element={<BoostCheckout />} />
           <Route path="/payment-success" element={<PaymentSuccess />} />
         </Routes>

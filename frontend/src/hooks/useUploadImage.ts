@@ -1,8 +1,8 @@
 import axios, { Axios, AxiosProgressEvent } from "axios";
 
 
-const cloudName = "dxl5wyou5";
-const presetKey="thrift"
+const cloudName = "dlkcexpuo";
+const presetKey="thriftify"
 
 type Callback = (progress:number,url:string )=>void;
 

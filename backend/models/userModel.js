@@ -30,7 +30,7 @@ const userSchema = mongoose.Schema(
     image: {
       type: String,
       default:
-        "https://imgs.search.brave.com/02hSRB0MzmY00MNyqpSAM3R1war1rNL3SHXb3pg5ce0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2RkL2M3/L2FjL2RkYzdhYzNj/NzZkZjIwMjA0MWFh/ZWVlNmFlMWY5MDg0/LmpwZw",
+        "https://static.vecteezy.com/system/resources/thumbnails/020/765/399/small_2x/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg",
     },
     isAdmin: {
       type: Boolean,

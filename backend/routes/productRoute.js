@@ -5,19 +5,17 @@ const {
   deleteProduct,
   searchProductByUser,
 } = require("../controller/productController");
+const adminAuth = require("../middlewares/adminAuth");
 
 const router = require("express").Router();
 
-// crud always
-
-// create product
-// read product get
-// update product
-// delete product
-router.post("/create", createProduct);
+// Public routes
 router.get("/", getProduct);
-router.put("/:id", updateProduct);
-router.delete("/:id", deleteProduct);
 router.get("/search", searchProductByUser);
+
+// Admin protected routes
+router.post("/create", adminAuth, createProduct);
+router.put("/:id", adminAuth, updateProduct);
+router.delete("/:id", adminAuth, deleteProduct);
 
 module.exports = router;

@@ -3,11 +3,15 @@ const {
   getCategory,
   deleteCategory,
 } = require("../controller/categoryController");
+const adminAuth = require("../middlewares/adminAuth");
 
 const router = require("express").Router();
 
-router.post("/create", createCategory);
+// Public routes
 router.get("/", getCategory);
-router.delete("/:id", deleteCategory);
+
+// Admin protected routes
+router.post("/create", adminAuth, createCategory);
+router.delete("/:id", adminAuth, deleteCategory);
 
 module.exports = router;

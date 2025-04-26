@@ -63,7 +63,7 @@ const SearchModal: React.FC<SearchModalPropsType> = ({ children, full }) => {
                   <div>
                     <h4>{product.name}</h4>
                     <p>Rs {product.price}</p>
-                    <p>In stock {product.quantity}</p>
+                    {/* <p>In stock {product.quantity}</p> */}
                   </div>
                 </Link>
               ))}
