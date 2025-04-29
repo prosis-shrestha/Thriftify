@@ -1,0 +1,354 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi", "Hey", "How are you", "Is anyone there?", "Hello", "Good day",
+        "What's up", "Howdy", "Greetings", "Good morning", "Good afternoon",
+        "Hi Thriftify", "Hello there", "Hey buddy", "Hiya"
+      ],
+      "responses": [
+        "Hello! Welcome to Thriftify :-)",
+        "Hi there, thanks for visiting Thriftify",
+        "Hey! How can we assist you today?",
+        "Hello, what can we help you find today?",
+        "Greetings! Ready to discover some unique fashion finds?",
+        "Hi! Excited to help you find your next favorite outfit!"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye", "See you later", "Goodbye", "Take care", "Catch you later",
+        "Have a good one", "Until next time", "Gotta go", "Farewell",
+        "I'm off", "Signing out", "That's all for now"
+      ],
+      "responses": [
+        "Goodbye! Thanks for using Thriftify",
+        "See you next time, happy thrifting!",
+        "Bye! Come back soon to find more great deals.",
+        "Take care and enjoy your thrifty finds!",
+        "Until next time, stay stylish and thrifty!",
+        "Farewell! Remember, fashion is always waiting for you at Thriftify."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks", "Thank you", "That's helpful", "Thank's a lot!", "Appreciate it",
+        "Cheers", "You've been great", "Much appreciated", "Thanks for the help",
+        "You're a lifesaver", "That's exactly what I needed"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Happy to help, anytime!",
+        "Glad to be of assistance",
+        "It's our pleasure to help you thrift in style!",
+        "Anytime! Don't forget to check out our latest arrivals.",
+        "You're welcome! Remember, every purchase helps reduce fashion waste."
+      ]
+    },
+    {
+      "tag": "items",
+      "patterns": [
+        "What items do you have?", "What can I find here?", "What do you sell?",
+        "What kind of clothes do you offer?", "Do you have accessories?",
+        "What's your inventory like?", "Types of fashion items available",
+        "Range of products", "What can I shop for?"
+      ],
+      "responses": [
+        "We offer a variety of secondhand wearables including clothes, shoes, and accessories",
+        "At Thriftify, you can find clothes, shoes, accessories, and more",
+        "Our inventory includes a wide range of fashion items from tops to bottoms, shoes, and accessories",
+        "We have everything from vintage tees to designer dresses, and trendy accessories",
+        "You can shop for a diverse selection of pre-loved fashion items, including clothing for all genders, accessories, and footwear"
+      ]
+    },
+    {
+      "tag": "category_search",
+      "patterns": [
+        "Show me accessories", "What tops do you have?", "Do you have dresses?",
+        "I'm looking for shoes", "Where can I find pants?", "Got any watches?",
+        "Show me your handbags", "What kind of accessories do you sell?",
+        "Do you have any hats?", "Can I see your collection of jeans?"
+      ],
+      "responses": [
+        "We have a wide range of categories including Accessories, Watches, Pants, Tops, Shoes, and Dresses. You can easily browse these categories from our main menu.",
+        "To search for specific categories like accessories or tops, use the search bar or navigate through our category menu on the homepage.",
+        "We offer various categories such as Accessories, Tops, Pants, Dresses, Shoes, and Watches. You can filter your search results by these categories for easier browsing.",
+        "Whether you're looking for accessories, clothing, or footwear, we've got you covered. Use our category filters to narrow down your search."
+      ]
+    },
+    {
+      "tag": "gender_specific",
+      "patterns": [
+        "Show men's items", "What women's clothing do you have?", "Do you have unisex options?",
+        "Where's the men's section?", "I need women's shoes", "Unisex accessories please",
+        "Are there clothes for all genders?", "Do you categorize by gender?",
+        "Can I filter items by gender?", "Show me gender-neutral options"
+      ],
+      "responses": [
+        "You can easily filter items by gender. We have sections for men's, women's, and unisex items across all our categories.",
+        "To find gender-specific items, use the gender filter in our search options. We offer choices for men, women, and unisex items.",
+        "Whether you're looking for men's, women's, or unisex fashion, we have options for all. Use our gender filter to narrow down your search.",
+        "Our platform allows you to browse by gender. Simply select your preferred gender option in the filters to see relevant items."
+      ]
+    },
+    {
+      "tag": "location_based_search",
+      "patterns": [
+        "Items in Kathmandu", "What's available in Butwal?", "Show me products near Pokhara",
+        "Local items in my city", "Nearby fashion finds", "Clothes available in my area",
+        "How to search by location?", "Find items close to me", "Products in specific cities",
+        "Can I see what's for sale near me?"
+      ],
+      "responses": [
+        "You can easily search for items based on location. Use our location filter to find products in specific cities like Kathmandu, Butwal, or Pokhara.",
+        "To find local items, enable location services or enter your city in the search bar. You'll see products available in your area.",
+        "Our platform allows you to browse items by city. Simply enter your location or use the map feature to discover fashion finds near you.",
+        "Finding local items is easy! Use the location filter or map view to see what's available in your city or nearby areas."
+      ]
+    },
+    {
+      "tag": "condition_inquiry",
+      "patterns": [
+        "What does 'like new' mean?", "How do you determine item condition?", "Are all items used?",
+        "Explanation of condition categories", "What's the difference between used and like new?",
+        "Do you sell new items?", "How to know the condition of an item",
+        "Are the conditions accurately described?", "What if the item condition is misrepresented?"
+      ],
+      "responses": [
+        "We use condition categories like 'like new', 'gently used', and 'well-worn' to describe items. 'Like new' means the item shows little to no signs of wear.",
+        "Item conditions are described by sellers and verified through photos. You can always ask for more details about an item's condition through our messaging system.",
+        "While most items are pre-owned, conditions range from 'like new' to 'well-worn'. Always check the item description and photos for accurate condition information.",
+        "We encourage sellers to accurately describe item conditions. If you receive an item not as described, please contact our support team for assistance."
+      ]
+    },
+    {
+      "tag": "price_range_search",
+      "patterns": [
+        "Items under 2000", "Expensive watches", "Affordable accessories",
+        "How to filter by price?", "Show me budget-friendly options", "Luxury items price range",
+        "Cheapest products available", "High-end fashion items", "Price categories explained",
+        "How do I set a price range for my search?"
+      ],
+      "responses": [
+        "You can easily filter items by price range. Use our price filter to set your desired minimum and maximum prices.",
+        "To find items within your budget, use the price range filter in the search options. You can set both lower and upper limits.",
+        "Whether you're looking for affordable finds or luxury items, our price filter can help. Simply set your desired price range in the search options.",
+        "Our platform allows you to search by price. Use the price filter to find items that fit your budget, from bargain finds to high-end pieces."
+      ]
+    },
+    {
+      "tag": "brand_inquiry",
+      "patterns": [
+        "Do you have any branded items?", "Are there designer clothes?", "What brands can I find here?",
+        "Popular brands on Thriftify", "How to search for specific brands?", "Luxury brands available",
+        "Do you verify brand authenticity?", "Can I filter by brand?", "What's your most popular brand?",
+        "Are all items branded?"
+      ],
+      "responses": [
+        "We have a wide variety of brands available, from everyday wear to designer labels. You can use our brand filter to search for specific brands.",
+        "Thriftify offers both branded and non-branded items. Use the search bar or brand filter to find specific brands you're interested in.",
+        "You can find a range of brands on our platform. While we can't guarantee specific brands, you'll often find popular and designer labels among our listings.",
+        "We have many branded items, but authenticity is determined by sellers. Always check item descriptions and feel free to ask sellers for more information about brand authenticity."
+      ]
+    },
+    {
+      "tag": "seasonal_items",
+      "patterns": [
+        "Summer clothes", "Winter wear", "Seasonal fashion", "Where to find summer dresses?",
+        "Cool clothes for hot weather", "Warm jackets for winter", "Seasonal trends",
+        "How to search for season-specific items?", "Fall fashion available?",
+        "Do you have a spring collection?"
+      ],
+      "responses": [
+        "You can find seasonal items by using relevant keywords in our search bar, like 'summer dress' or 'winter coat'.",
+        "We have items for all seasons. Try using our search filters and combining them with seasonal keywords to find what you need.",
+        "Seasonal fashion is always available on Thriftify. Browse our categories and use seasonal keywords to find the perfect items for any time of year.",
+        "While we don't have specific seasonal collections, you can easily find season-appropriate items using our search and filter options."
+      ]
+    },
+    {
+      "tag": "size_guidance",
+      "patterns": [
+        "How do I know if it will fit?", "Do you have size charts?", "What if the size is wrong?",
+        "Are sizes standardized?", "How to measure for correct size?", "Size conversion chart",
+        "What's your return policy for wrong sizes?", "Do sellers provide measurements?",
+        "Can I ask for specific measurements?", "How accurate are the sizes listed?"
+      ],
+      "responses": [
+        "Sizes can vary between brands. We recommend checking the item description for specific measurements and asking the seller if you need more details.",
+        "While we don't provide standardized size charts, sellers often include measurements in their listings. Don't hesitate to message them for more information.",
+        "To ensure the best fit, always check the measurements provided in the listing and compare them to items you already own. You can also ask sellers for additional measurements.",
+        "If you receive an item that doesn't fit, contact the seller first. Many are open to returns or exchanges, but policies may vary between sellers."
+      ]
+    },
+    {
+      "tag": "trending_items",
+      "patterns": [
+        "What's popular right now?", "Best selling items", "Trending fashion",
+        "Hot items this week", "What's everyone buying?", "Most viewed products",
+        "Current fashion trends on Thriftify", "What's in style?", "Popular categories",
+        "How to find trendy items?"
+      ],
+      "responses": [
+        "You can find trending items on our homepage or by using the 'Sort by: Popular' option in our search results.",
+        "Check out our 'Trending Now' section to see what's popular among Thriftify shoppers.",
+        "Popular items often include vintage finds, designer pieces, and seasonally appropriate clothing. Use our search filters to explore these categories.",
+        "To discover trending fashion, browse our featured items or use the popularity sort option in your search results."
+      ]
+    },
+    {
+      "tag": "item_authenticity",
+      "patterns": [
+        "How do you verify authentic items?", "Are the branded products real?", "Spotting fake items",
+        "Authenticity guarantee", "What if I receive a counterfeit item?", "How to check if an item is genuine",
+        "Do you have a process for authenticating luxury items?", "Can sellers list replicas?",
+        "What's your policy on fake brands?", "How to report counterfeit goods?"
+      ],
+      "responses": [
+        "While we don't personally authenticate items, we expect sellers to accurately represent their products. Always check item descriptions and photos carefully.",
+        "If you have concerns about an item's authenticity, don't hesitate to ask the seller for more information or proof of authenticity.",
+        "We prohibit the sale of counterfeit items. If you receive an item you believe to be fake, please contact our support team immediately.",
+        "To ensure authenticity, we recommend buying from reputable sellers with good ratings and asking for additional photos or authentication documents for high-value items."
+      ]
+    },
+    {
+      "tag": "upload_quality",
+      "patterns": [
+        "How to take good photos for selling?", "Tips for item descriptions", "Making my listing stand out",
+        "Best practices for selling", "How to price my items?", "What makes a good product title?",
+        "How many photos should I upload?", "Writing effective item descriptions",
+        "What details should I include when listing?", "How to attract more buyers to my items?"
+      ],
+      "responses": [
+        "To create attractive listings, use clear, well-lit photos from multiple angles. Write detailed descriptions including size, condition, and any flaws.",
+        "Good product titles should be descriptive and include brand, size, and key features. In your description, provide measurements and highlight unique aspects of the item.",
+        "We recommend uploading at least 3-5 photos per item, showing different angles and any wear or details. Natural lighting often works best for clothing photography.",
+        "To price competitively, research similar items on our platform. Be honest about condition and responsive to buyer inquiries to increase your chances of selling."
+      ]
+    },
+    {
+      "tag": "city_specific_trends",
+      "patterns": [
+        "What's trending in Kathmandu?", "Popular styles in Pokhara", "Butwal fashion trends",
+        "Local fashion scene", "What are people wearing in my city?", "Regional style differences",
+        "City-specific popular items", "How does fashion vary between cities?",
+        "Can I see what's popular in different locations?", "Local fashion influences"
+      ],
+      "responses": [
+        "You can explore city-specific trends by using our location filter along with the 'Sort by: Popular' option in search results.",
+        "While we don't categorize trends by city, you can get an idea of local styles by browsing items listed in specific locations.",
+        "Fashion trends can vary between cities. Try searching for items in different locations to see how styles change across regions.",
+        "To discover local trends, use our location filter and browse recently listed or popular items in that area."
+      ]
+    },
+    {
+      "tag": "quantity_inquiries",
+      "patterns": [
+        "Can I buy multiple quantities?", "Bulk purchase options", "How many items can I buy?",
+        "Purchasing more than one of the same item", "Are there quantity discounts?",
+        "Can sellers list multiple identical items?", "How to buy in bulk",
+        "Is there a limit on how many items I can purchase?", "Wholesale options",
+        "What if I want to buy all available quantities?"
+      ],
+      "responses": [
+        "Many sellers list multiple quantities of an item. Check the quantity available in the listing details.",
+        "You can usually purchase multiple quantities if they're available. Contact the seller directly for bulk purchase inquiries or possible discounts.",
+        "There's typically no limit on how many items you can buy, as long as the quantity is available. Always check with the seller for large orders.",
+        "For bulk or wholesale purchases, we recommend messaging the seller directly to discuss options and potential discounts."
+      ]
+    },
+    {
+      "tag": "precise_location",
+      "patterns": [
+        "How accurate is the item location?", "Can I see the exact pickup point?", "Is the location shown precise?",
+        "How detailed is the location information?", "Can I get the exact address?", "Location privacy concerns",
+        "How close is the shown location to the actual pickup spot?", "Do sellers provide exact locations?",
+        "Is the map location accurate?", "How to arrange a meetup location?"
+      ],
+      "responses": [
+        "For privacy and safety reasons, we show approximate locations. Exact pickup points are arranged between buyers and sellers through our messaging system.",
+        "The location shown is generally accurate to the neighborhood or area. Specific meetup locations should be discussed privately with the seller.",
+        "We prioritize user safety by not displaying exact addresses. You can discuss precise pickup locations with the seller once you've agreed to a purchase.",
+        "Our platform shows general location information. For your safety, always arrange meetups in public places and share exact locations only through our secure messaging system."
+      ]
+    },
+    {
+      "tag": "sold_items",
+      "patterns": [
+        "What happens to sold listings?", "Can I see what's been sold?", "Notification for sold out items",
+        "How long do sold items stay listed?", "Can I buy an item marked as sold?", "Reposts of sold items",
+        "Are sold items removed from search?", "How quickly are items marked as sold?",
+        "Can sellers relist sold items?", "What if an item is sold but not marked as such?"
+      ],
+      "responses": [
+        "Once an item is sold, it's marked as 'Sold' and remains visible for a short period before being removed from active listings.",
+        "Sold items are typically removed from search results but may be visible in the seller's profile for a limited time.",
+        "If you're interested in an item marked as sold, you can check the seller's other listings or save a search for similar items.",
+        "Sellers are encouraged to mark items as sold promptly. If you encounter an unmarked sold item, please notify us or the seller."
+      ]
+    },
+    {
+      "tag": "payment_methods",
+      "patterns": [
+        "What payment methods are accepted?", "Can I pay with cash?", "Do you support online payments?",
+        "Is PayPal accepted?", "How do I pay for an item?", "Are there any payment fees?",
+        "Is it safe to pay through the app?", "Can I use bank transfer?", "Credit card payment options",
+        "What's the most secure way to pay?"
+      ],
+      "responses": [
+        "Payment methods are arranged between buyers and sellers. We recommend discussing payment options with the seller through our messaging system.",
+        "While we don't process payments directly, we encourage safe payment practices. Always use secure methods and avoid sharing financial information outside our platform.",
+        "Popular payment methods include cash for in-person transactions and digital payments for added convenience and safety. Discuss preferences with your seller.",
+        "For your safety, we recommend using secure, traceable payment methods. Never share your financial details outside of our secure messaging system."
+      ]
+    },
+    {
+      "tag": "return_policy",
+      "patterns": [
+        "What's your return policy?", "Can I return an item if it doesn't fit?", "How do refunds work?",
+        "What if I'm not satisfied with my purchase?", "Do you offer exchanges?", "Time limit for returns",
+        "Who pays for return shipping?", "Conditions for accepting returns", "How to initiate a return",
+        "Are all sales final?"
+      ],
+      "responses": [
+        "Return policies are set by individual sellers. We recommend checking the seller's return policy before purchasing.",
+        "If you need to return an item, contact the seller directly through our messaging system to discuss options.",
+        "While many sales are final due to the nature of secondhand items, some sellers may offer returns or exchanges. Always clarify before buying.",
+        "If you encounter issues with a purchase, try resolving them with the seller first. If needed, our support team can assist in dispute resolution."
+      ]
+    },
+    {
+      "tag": "shipping_options",
+      "patterns": [
+        "Do you offer shipping?", "How much does shipping cost?", "What are the delivery options?",
+        "How long does shipping take?", "Can I track my package?", "International shipping available?",
+        "Who arranges shipping?", "Local pickup vs. shipping", "Fastest shipping method",
+        "How are shipping costs calculated?"
+      ],
+      "responses": [
+        "Shipping options and costs are determined by individual sellers. Discuss shipping preferences with the seller before purchasing.",
+        "Many sellers offer both local pickup and shipping options. You can filter search results to show items with your preferred delivery method.",
+        "Shipping times vary depending on the seller's location and chosen shipping method. Always confirm estimated delivery times with the seller.",
+        "For specific shipping inquiries, including costs, tracking, and delivery estimates, please contact the seller directly through our messaging system."
+      ]
+    },
+    {
+      "tag": "sustainability",
+      "patterns": [
+        "How does Thriftify support sustainability?", "Environmental impact of thrifting",
+        "Eco-friendly fashion options", "Reducing fashion waste", "Sustainable shopping practices",
+        "Carbon footprint of secondhand clothes", "How thrifting helps the environment",
+        "Ethical fashion choices", "Circular fashion economy", "Upcycling and repurposing clothes"
+      ],
+      "responses": [
+        "Thriftify promotes sustainability by encouraging the reuse of clothing, reducing waste and the demand for new production.",
+        "Shopping secondhand significantly reduces the environmental impact of fashion by extending the lifecycle of clothing items.",
+        "By choosing pre-loved fashion, you're participating in the circular economy and helping to reduce the fashion industry's carbon footprint.",
+        "Thrifting is a great way to find unique, sustainable fashion options while contributing to a more environmentally friendly shopping culture."
+      ]
+    }
+  ]
+}

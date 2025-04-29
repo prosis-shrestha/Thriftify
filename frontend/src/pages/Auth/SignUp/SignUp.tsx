@@ -37,7 +37,7 @@ const Signup = () => {
         throw new Error(data.message);
       }
     } catch (error: any) {
-      console.log(error.messages);
+      console.log(error?.response?.data.message);
       alert(
         "error",
         error?.response?.data.message ?? "Something went wrong , Try again"

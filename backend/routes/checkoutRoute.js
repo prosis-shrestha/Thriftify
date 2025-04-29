@@ -7,14 +7,12 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 router.post("/create-checkout-session", async (req, res) => {
   try {
     const { products } = req.body;
-    // const total = product.boostDays * 10000;
     const lineItems = products.map((product) => ({
       price_data: {
         currency: "inr",
         product_data: {
           name: product.name,
         },
-        // unit_amount: total,
         unit_amount: product.boostDays * 10000,
       },
       quantity: product.boostDays,
@@ -24,8 +22,8 @@ router.post("/create-checkout-session", async (req, res) => {
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: "http://localhost:5173/payment-success",
-      cancel_url: "http://localhost:5173/boostCheckout",
+      success_url: `${process.env.FRONTEND_URL}/payment-success`,
+      cancel_url: `${process.env.FRONTEND_URL}/boostCheckout`,
     });
     res.json({ id: session.id });
   } catch (error) {
