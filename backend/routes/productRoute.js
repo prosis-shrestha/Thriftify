@@ -14,8 +14,8 @@ router.get("/", getProduct);
 router.get("/search", searchProductByUser);
 
 // Admin protected routes
-router.post("/create", adminAuth, createProduct);
-router.put("/:id", adminAuth, updateProduct);
+router.post("/create", createProduct);
+router.put("/:id", updateProduct);
 router.delete("/:id", adminAuth, deleteProduct);
 
 module.exports = router;

@@ -9,7 +9,6 @@ import { useContext } from "react";
 import { ThriftContext } from "./context/Context";
 import { getSessionUser } from "./utils/api";
 import { useEffect } from "react";
-import Transaction from "./pages/transaction/Transaction";
 import AllProducts from "./pages/AllProducts/AllProducts";
 import Confirmation from "./pages/confirmation/Confirmation";
 import Confirmation_email_send from "./pages/confirmation_email_send/Confirmation_email_send";
@@ -52,7 +51,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/product/:id" element={<Buy />} />
-          <Route path="/transactions" element={<Transaction />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/upload" element={<Upload />} />

@@ -81,7 +81,6 @@ app.use(
 
 app.use("/api/auth", require("./routes/authRoute"));
 app.use("/api/product", require("./routes/productRoute"));
-app.use("/api/transaction", require("./routes/transactionRoute"));
 app.use("/api/user", require("./routes/userRoute"));
 app.use("/api/category", require("./routes/categoryRote"));
 app.use("/api/comment", require("./routes/CommentRoute"));

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./boostCheckout.module.css";
 import { loadStripe } from "@stripe/stripe-js";
-import { updateProductApi, createCheckoutApi } from "../../utils/api"; // Assuming you have this API function
+import { updateProductApi, createCheckoutApi } from "../../utils/api";
 
 const stripePromise = loadStripe('pk_test_51PaBHtRv6GaYz57Z2UuuLgsLv18jlKGh0INJpLi3LF9ALMGu8ifjMWWN5QHx3gYdASu8TIqGlSoORaT9mwI9Pcrx00UwRucIIW');
 
