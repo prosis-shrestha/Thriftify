@@ -14,7 +14,7 @@ import Confirmation from "./pages/confirmation/Confirmation";
 import Confirmation_email_send from "./pages/confirmation_email_send/Confirmation_email_send";
 import Verify from "./pages/verify/Verify";
 import Profile from "./pages/profile/Profile";
-import ChatList from "./pages/Chatlist/chatList";
+import ChatList from "./pages/Chatlist/chatlist";
 import MyProducts from "./pages/MyProducts/MyProducts";
 import Admin from "./pages/Admin/Admin";
 import BoostCheckout from "./pages/BoostCheckout/BoostCheckout";
