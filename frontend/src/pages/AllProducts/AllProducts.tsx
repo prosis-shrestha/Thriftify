@@ -1,26 +1,27 @@
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
-import TopNav from "../../components/TopNav/TopNav";
-import AllProductCard from "../../components/allProductsCard/AllProductCard";
-import SideBar from "../../components/allProductsCard/sidebar/SideBar";
-import styles from "./allProducts.module.css";
-import { BsSearch } from "react-icons/bs";
+// import TopNav from "../../components/TopNav/TopNav";
+// import AllProductCard from "../../components/allProductsCard/AllProductCard";
+import SideBar from "../../components/SideBar/SideBar";
+import styles from "./all-products.module.css";
+// import { BsSearch } from "react-icons/bs";
 import { getAllProductApi, getProductsbyCategoryApi } from "../../utils/api";
-import ProductItem from "../../components/productItem/ProductItem";
+import ProductItem from "../../components/ProductItem/ProductItem.tsx";
 import { useLocation } from "react-router-dom";
 // import SearchModal from "../../layouts/modal/SeachModal/SearchModal";
-import { ThriftContext } from "../../context/Context";
+import { useThriftContext } from "../../context/Context";
 import { ripples } from "ldrs";
+import { ProductType } from "../../utils/type";
 
 const AllProducts = () => {
   ripples.register();
   const {
     state: { user },
-  } = useContext(ThriftContext);
+  } = useThriftContext();
   const location = useLocation();
   const initialCategory = location.state?.category || "All";
   const [currentCategory, setCurrentCategory] = useState(initialCategory);
-  const [productItem, setProductItem] = useState([]);
+  const [productItem, setProductItem] = useState<ProductType[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -48,7 +49,9 @@ const AllProducts = () => {
 
   const filteredProductItem = user
     ? productItem.filter(
-        (product) => product.owner._id !== user._id && !product.sold
+        (product) =>
+          typeof product.owner !== "object" ||
+          (product.owner._id !== user._id && !product.sold)
       )
     : productItem.filter((product) => !product.sold);
 
@@ -73,7 +76,13 @@ const AllProducts = () => {
               </div>
             ) : filteredProductItem.length > 0 ? (
               filteredProductItem.map((product) => (
-                <ProductItem key={product._id} productItem={product} />
+                <ProductItem
+                  key={product._id}
+                  productItem={product}
+                  isSelected={false}
+                  showCheckbox={false}
+                  handleSelectProduct={() => {}}
+                />
               ))
             ) : (
               <p className={styles.no}>No items</p>

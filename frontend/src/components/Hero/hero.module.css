@@ -2,7 +2,7 @@
   height: 70vh;
   width: 100%;
   display: flex;
-  background-image: url("/images/clothes.png");
+  background-image: url("/src/assets/clothes.png");
   background-attachment: fixed;
   position: relative;
   background-size: contain;

@@ -61,7 +61,7 @@ const Chatbox = () => {
     return (
         <div className="chatbox">
             {/* <div className="chatbox__button" onClick={toggleState}> */}
-            <button className="chatbox__button" onClick={toggleState}><img src="/images/ai_star.png" className="chat_img" /></button>
+            <button className="chatbox__button" onClick={toggleState}><img src="/src/assets/ai_star.png" className="chat_img" /></button>
             {/* </div> */}
             {isOpen && (
                 <div className="chatbox__support" ref={chatboxRef}>

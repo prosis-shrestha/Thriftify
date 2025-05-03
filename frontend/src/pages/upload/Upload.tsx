@@ -1,29 +1,35 @@
-import React, { ChangeEvent, SyntheticEvent, useRef, useState } from "react";
+import React, {
+  ChangeEvent,
+  SyntheticEvent,
+  useRef,
+  useState,
+  useEffect,
+} from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import styles from "./upload.module.css";
 import { IoMdCloudUpload } from "react-icons/io";
 import { AddProductApi, allCategoryApi } from "../../utils/api";
-import { ThriftContext } from "../../context/Context";
-import { useContext, useEffect } from "react";
+import { useThriftContext } from "../../context/Context";
 import { useNavigate } from "react-router-dom";
 import { useUploadImage } from "../../hooks/useUploadImage";
 import { useAlert } from "../../hooks/useAlert";
 import axios from "axios";
 import { FaLocationCrosshairs } from "react-icons/fa6";
+import { CategoryType } from "../../utils/type";
 
 const Upload = () => {
   const navigate = useNavigate();
   const {
     state: { user },
-  } = useContext(ThriftContext);
+  } = useThriftContext();
   const fileRef: React.MutableRefObject<HTMLInputElement | null> = useRef(null);
   const [file, setFile] = useState<File | null>(null);
-  const [allCategories, setAllCategories] = useState([]);
+  const [allCategories, setAllCategories] = useState<CategoryType[]>([]);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadData, setUploadData] = useState({
     name: "",
     desc: "",
-    owner: user?._id,
+    owner: user?._id ?? "",
     image: "",
     price: "",
     category: "",
@@ -107,6 +113,11 @@ const Upload = () => {
 
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
+
+    if (!user?._id) {
+      return;
+    }
+
     setIsUploading(true);
 
     // Fetch coordinates
@@ -116,6 +127,7 @@ const Upload = () => {
       owner: user._id,
       lat: latitude,
       lon: longitude,
+      sold: false,
     };
 
     // upload image

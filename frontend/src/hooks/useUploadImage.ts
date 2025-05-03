@@ -1,4 +1,4 @@
-import axios, { Axios, AxiosProgressEvent } from "axios";
+import axios, { AxiosProgressEvent } from "axios";
 
 
 const cloudName = "dlkcexpuo";

@@ -1,22 +1,33 @@
 import { Link } from "react-router-dom";
-import styles from "./productItem.module.css";
+import styles from "./product-item.module.css";
+import { ProductType } from "../../utils/type";
+import { FC } from "react";
+// type ProductItemProps = {
+//   productItem: {
+//     image: string;
+//     desc: string;
+//     name: string;
+//     price: number;
+//     sale: string;
+//     _id?: string;
+//     condition: string;
+//   };
+//   isSelected: boolean;
+//   handleSelectProduct: (id: string) => void;
+// };
 
-type ProductItemProps = {
-  productItem: {
-    image: string;
-    desc: string;
-    name: string;
-    price: number;
-    sale: string;
-    _id?: string;
-    condition: string;
-  };
+export interface ProductItemProps {
+  productItem: ProductType;
+  // key?: number | string;
   isSelected: boolean;
+  showCheckbox: boolean;
   handleSelectProduct: (id: string) => void;
-};
-const ProductItem: React.FC<ProductItemProps> = ({
+}
+
+const ProductItem: FC<ProductItemProps> = ({
   productItem,
   isSelected,
+  showCheckbox,
   handleSelectProduct,
 }) => {
   return (
@@ -38,13 +49,15 @@ const ProductItem: React.FC<ProductItemProps> = ({
           </div>
         </div>
       </Link>
-      {handleSelectProduct && (
+      {showCheckbox && handleSelectProduct && (
         <label className={styles.ccontainer}>
           <input
             type="checkbox"
             className={styles.checkbox}
             checked={isSelected}
-            onChange={() => handleSelectProduct(productItem._id)}
+            onChange={() =>
+              productItem._id && handleSelectProduct(productItem._id)
+            }
           />
           Select
         </label>

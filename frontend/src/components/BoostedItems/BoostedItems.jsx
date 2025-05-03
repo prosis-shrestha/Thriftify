@@ -1,8 +1,8 @@
-import styles from "./boostedItems.module.css";
+import styles from "./boosted-items.module.css";
 import React, { useEffect, useState, useRef } from "react";
 import { FaAngleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import ProductItem from "../productItem/ProductItem";
+import ProductItem from "../ProductItem/ProductItem";
 
 import { ripples } from "ldrs";
 

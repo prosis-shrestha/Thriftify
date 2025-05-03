@@ -1,14 +1,19 @@
 import { Link } from "react-router-dom";
-import styles from "./categoryItem.module.css";
+import styles from "./category-item.module.css";
+import { CategoryType } from "../../../utils/type";
+import { FC } from "react";
+// type CategoryItemProps = {
+//   product: {
+//     image: string;
+//     categoryName: string;
+//   };
+// };
 
-type CategoryItemProps = {
-  product: {
-    image: string;
-    categoryName: string;
-  };
-};
+interface CategoryItemProps {
+  product: CategoryType;
+}
 
-const CategoryItem: React.FC<CategoryItemProps> = ({ product }) => {
+const CategoryItem: FC<CategoryItemProps> = ({ product }) => {
   return (
     <Link
       to={`/allProducts`}

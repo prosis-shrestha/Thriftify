@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import styles from "./boostCheckout.module.css";
+import styles from "./boost-checkout.module.css";
 import { loadStripe } from "@stripe/stripe-js";
 import { updateProductApi, createCheckoutApi } from "../../utils/api";
 

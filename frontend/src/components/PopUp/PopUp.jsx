@@ -1,4 +1,4 @@
-import styles from "./popUp.module.css";
+import styles from "./pop-up.module.css";
 import React from "react";
 
 const PopUp = ({ onConfirm, onCancel, selectedProducts = [] }) => {

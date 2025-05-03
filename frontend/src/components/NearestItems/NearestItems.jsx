@@ -1,21 +1,21 @@
-import styles from "./nearestitems.module.css";
-import React, { useEffect, useState, useRef } from "react";
-import { FaAngleRight } from "react-icons/fa";
+import styles from "./nearest-items.module.css";
+import { useEffect, useState, useRef } from "react";
+// import { FaAngleRight } from "react-icons/fa";
 
-import ProductItem from "../productItem/ProductItem";
+import ProductItem from "../ProductItem/ProductItem";
 
 import { ripples } from "ldrs";
 
-const NearestItems = ({ allProducts }) => {
+const NearestItems = ({ allProducts, loading }) => {
   ripples.register();
   const [items, setItems] = useState([]);
   const productWrapperRef = useRef(null);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const [userposition, setUserPosition] = useState([])
 
   useEffect(() => {
     // setLoading(true);
-    // if (allProducts.length > 0) {
+    // if (allProducts.length > 0) { 
     if (userposition.length == 0) {
       console.log("Requesting location...");
       navigator.geolocation.getCurrentPosition(
@@ -58,7 +58,7 @@ const NearestItems = ({ allProducts }) => {
     setItems(nearestItems);
     // console.log(`items: ${nearestItems}`)
     // nearestItems.length == 0 ? setLoading(false) : setLoading(true)
-    setLoading(false)
+    // Don't modify the loading prop as it's controlled by the parent component
 
   };
 

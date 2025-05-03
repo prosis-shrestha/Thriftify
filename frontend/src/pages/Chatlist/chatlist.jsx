@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext, useRef } from 'react';
 import { ThriftContext } from '../../context/Context';
 import { getChatRoomsApi } from '../../utils/api';
-import './chatList.css';
+import './chatlist.css';
 import socket from "../../utils/socket";
 import ChatUser from "../../components/ChatUser/ChatUser";
 import Navbar from "../../components/Navbar/Navbar"

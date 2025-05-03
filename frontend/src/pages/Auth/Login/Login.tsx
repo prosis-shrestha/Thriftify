@@ -1,13 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
-import styles from "../Auth.module.css";
+import styles from "../auth.module.css";
 import { ChangeEvent, SyntheticEvent, useState } from "react";
 import { loginApi } from "../../../utils/api";
-import { useContext } from "react";
-import { ThriftContext } from "../../../context/Context";
+import { useThriftContext } from "../../../context/Context";
 import { useAlert } from "../../../hooks/useAlert";
 
 const Login = () => {
-  const { dispatch } = useContext(ThriftContext);
+  const { dispatch } = useThriftContext();
   const nagivate = useNavigate();
 
   const [emailData, setEmailData] = useState({
@@ -28,7 +27,6 @@ const Login = () => {
     try {
       const { data, status } = await loginApi(emailData);
       if (status === 200) {
-        // console.log(data.message);
         alert("success", "You logged in successfully");
         dispatch({ type: "addUser", payload: data.message });
 
@@ -52,7 +50,7 @@ const Login = () => {
     <div className={styles.AuthWrapper}>
       <img
         onClick={() => nagivate("/")}
-        src="/images/logo.png"
+        src="/src/assets/logo.png"
         className={styles.logo}
       />
 

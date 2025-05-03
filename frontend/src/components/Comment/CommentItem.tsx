@@ -1,20 +1,29 @@
-import styles from "./Comment.module.css";
-
+import styles from "./comment-item.module.css";
+import { CommentType } from "../../utils/type";
 import { format } from "timeago.js";
+import { FC } from "react";
 
-const CommentItem = ({ comment }) => {
+interface CommentItemProps {
+  comment: CommentType;
+}
+
+const CommentItem: FC<CommentItemProps> = ({ comment }) => {
   return (
     <div className={styles.commentItem}>
       <div className={styles.commentTop}>
         <div className={styles.leftTop}>
-          <img src={comment.user.image} alt="UserImg" />
-          <div className={styles.userPrimaryInfo}>
-            <h3>{comment.user.username}</h3>
-            <p>{comment.user.email}</p>
-          </div>
+          {typeof comment.user === "object" && "image" in comment.user && (
+            <>
+              <img src={comment.user.image} alt="UserImg" />
+              <div className={styles.userPrimaryInfo}>
+                <h3>{comment.user.username}</h3>
+                <p>{comment.user.email}</p>
+              </div>
+            </>
+          )}
         </div>
         <div className={styles.rightTop}>
-          <p>{format(comment.createdAt)}</p>
+          {comment.createdAt && <p>{format(comment.createdAt)}</p>}
         </div>
       </div>
       <div className={styles.commentDown}>

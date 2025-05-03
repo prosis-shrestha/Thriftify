@@ -1,7 +1,6 @@
-import { ThriftContext } from "../../context/Context";
+import { useThriftContext } from "../../context/Context";
 import styles from "./navbar.module.css";
-import { useContext } from "react";
-import SignOutPopover from "../popover/signout popover/SignOutPopover";
+import SignOutPopUp from "../PopUp/SignOut/SignOutPopUp";
 import { Link } from "react-router-dom";
 import SearchModal from "../../layouts/modal/SeachModal/SearchModal";
 import { FaFacebookMessenger, FaSearch } from "react-icons/fa";
@@ -9,12 +8,16 @@ import { FaFacebookMessenger, FaSearch } from "react-icons/fa";
 const Navbar = () => {
   const {
     state: { user },
-  } = useContext(ThriftContext);
+  } = useThriftContext();
 
   return (
     <div className={styles.navbar}>
       <Link to={"/"} className={styles.logo}>
-        <img src="/images/logo.png" alt="logo" className={styles.logo_img} />
+        <img
+          src="/src/assets/logo.png"
+          alt="logo"
+          className={styles.logo_img}
+        />
       </Link>
 
       <div className={styles.others}>
@@ -36,7 +39,7 @@ const Navbar = () => {
               Sell
             </Link>
 
-            <SignOutPopover>
+            <SignOutPopUp>
               <div className={styles.profileImgWrapper}>
                 <img
                   className={styles.profileImg}
@@ -44,7 +47,7 @@ const Navbar = () => {
                   alt="profile"
                 />
               </div>
-            </SignOutPopover>
+            </SignOutPopUp>
           </>
         ) : (
           <Link to={"/login"}>

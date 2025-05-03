@@ -6,16 +6,18 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import styles from "./SearchModal.module.css";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, FC, useEffect, useState } from "react";
 import { searchProductByInputApi } from "../../../utils/api";
+import { ProductType } from "../../../utils/type";
 
 type SearchModalPropsType = {
   children: React.ReactNode;
   full?: boolean | undefined;
 };
-const SearchModal: React.FC<SearchModalPropsType> = ({ children, full }) => {
+
+const SearchModal: FC<SearchModalPropsType> = ({ children, full }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [searchedProduct, setSearchedProduct] = useState([]);
+  const [searchedProduct, setSearchedProduct] = useState<ProductType[]>([]);
   const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {

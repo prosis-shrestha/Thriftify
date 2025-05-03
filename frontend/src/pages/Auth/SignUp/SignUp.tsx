@@ -2,7 +2,7 @@
 
 // import SelectCountry from '../../../Layouts/popovers/selectCountry/SelectCountry';
 import { Link, useNavigate } from "react-router-dom";
-import styles from "../Auth.module.css";
+import styles from "../auth.module.css";
 import { SyntheticEvent, useState } from "react";
 import { signUpApi } from "../../../utils/api";
 import { useAlert } from "../../../hooks/useAlert";
@@ -48,7 +48,7 @@ const Signup = () => {
     <div className={styles.AuthWrapper}>
       <img
         onClick={() => navigate("/")}
-        src="/images/logo.png"
+        src="/src/assets/logo.png"
         className={styles.logo}
       />
       <div className={styles.login_main_box}>

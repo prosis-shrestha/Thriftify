@@ -1,16 +1,17 @@
-import styles from "./CommentInput.module.css";
-import { useContext, useState } from "react";
+import styles from "./comment-input-box.module.css";
+import { useState } from "react";
 import { ChangeEvent } from "react";
 import { AddCommentApi } from "../../../utils/api";
-import { ThriftContext } from "../../../context/Context";
+// import { ThriftContext } from "../../../context/Context";
 import { useParams } from "react-router-dom";
 import { useAlert } from "../../../hooks/useAlert";
+import { useThriftContext } from "../../../context/Context";
 const CommentInputBox = () => {
   const [commentInput, setCommentInput] = useState("");
   const {
     state: { user },
     dispatch,
-  } = useContext(ThriftContext);
+  } = useThriftContext();
   const { id } = useParams();
   const { alert } = useAlert();
   // console.log("current User",user)
@@ -33,7 +34,7 @@ const CommentInputBox = () => {
     };
 
     try {
-      const { status, data } = await AddCommentApi(commentPayload);
+      const { status } = await AddCommentApi(commentPayload);
       if (status === 200) {
         setCommentInput("");
         dispatch({ type: "setRefresh" });

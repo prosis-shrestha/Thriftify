@@ -1,21 +1,23 @@
-import { useEffect, useContext, useState } from "react";
-import SideBar from "../../components/allProductsCard/sidebar/SideBar";
-import styles from "./adminAllProducts.module.css";
+import { useEffect, useState } from "react";
+import SideBar from "../../components/SideBar/SideBar";
+import styles from "./admin-all-products.module.css";
 import { getAllProductApi, getProductsbyCategoryApi } from "../../utils/api";
-import ProductItem from "../../components/productItem/ProductItem";
+import ProductItem from "../../components/ProductItem/ProductItem";
 import { useLocation } from "react-router-dom";
-import { ThriftContext } from "../../context/Context";
+// import { ThriftContext } from "../../context/Context";
 import { ripples } from "ldrs";
+import { useThriftContext } from "../../context/Context";
+import { ProductType } from "../../utils/type";
 
 const AllProducts = () => {
   ripples.register();
   const {
     state: { user },
-  } = useContext(ThriftContext);
+  } = useThriftContext();
   const location = useLocation();
   const initialCategory = location.state?.category || "All";
   const [currentCategory, setCurrentCategory] = useState(initialCategory);
-  const [productItem, setProductItem] = useState([]);
+  const [productItem, setProductItem] = useState<ProductType[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -42,7 +44,10 @@ const AllProducts = () => {
   };
 
   const filteredProductItem = user
-    ? productItem.filter((product) => product.owner._id !== user._id)
+    ? productItem.filter(
+        (product) =>
+          typeof product.owner !== "object" || product.owner._id !== user._id
+      )
     : productItem;
 
   return (
@@ -64,8 +69,14 @@ const AllProducts = () => {
                 <l-ripples size="100" speed="2" color="#7B76C5"></l-ripples>
               </div>
             ) : filteredProductItem.length > 0 ? (
-              filteredProductItem.map((product) => (
-                <ProductItem key={product._id} productItem={product} />
+              filteredProductItem.map((product, index) => (
+                <ProductItem
+                  key={index}
+                  productItem={product}
+                  isSelected={false}
+                  handleSelectProduct={() => {}}
+                  showCheckbox={false}
+                />
               ))
             ) : (
               <p className={styles.no}>No items</p>

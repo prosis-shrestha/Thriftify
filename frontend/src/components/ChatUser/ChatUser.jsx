@@ -1,5 +1,5 @@
 import React from 'react';
-import './ChatUser.css';
+import './chat-user.css';
 
 const ChatUser = ({ userName, onClick, isSelected, hasNotification }) => {
     return (

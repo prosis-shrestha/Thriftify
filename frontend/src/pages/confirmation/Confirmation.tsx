@@ -1,18 +1,17 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./confirmation.module.css";
 import queryString from "query-string";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   confirmEmailApi,
-  sentConfirmationlinkApi,
-  verfiyUserApi,
+  // sentConfirmationlinkApi,
   verifyIfEmailConfirmationTokenIsValidApi,
 } from "../../utils/api";
-import { ThriftContext } from "../../context/Context";
+import { useThriftContext } from "../../context/Context";
 import { useAlert } from "../../hooks/useAlert";
 const Confirmation = () => {
   const location = useLocation();
-  const { dispatch } = useContext(ThriftContext);
+  const { dispatch } = useThriftContext();
   const { alert } = useAlert();
   const queryParams = queryString.parse(location.search);
   const hashValue = queryParams.hash;
@@ -82,24 +81,24 @@ const Confirmation = () => {
     }
   };
 
-  const handleResendLink = async () => {
-    console.log(email);
-    if (!email) return;
-    try {
-      const { status } = await sentConfirmationlinkApi(email);
-      if (status === 200) {
-        alert("success", "Confirmation link has been sent ");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const handleResendLink = async () => {
+  //   console.log(email);
+  //   if (!email) return;
+  //   try {
+  //     const { status } = await sentConfirmationlinkApi(email);
+  //     if (status === 200) {
+  //       alert("success", "Confirmation link has been sent ");
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <div className={styles.confirmation_container}>
       <div className={styles.confirmation_box}>
         <img
-          src="/images/confirm.png"
+          src="/src/assets/confirm.png"
           alt="confirm"
           className={styles.confirm_img}
         />

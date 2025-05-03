@@ -1,15 +1,16 @@
-import React, { Dispatch, useReducer } from "react";
+import React, { Dispatch, useReducer, useContext } from "react";
+import { UserType } from "../utils/type";
 
-type UserType = {
-  username: string;
-  email: string;
-  about: string;
-  isAdmin: boolean;
-  image?: string;
-  _id?: string;
-  city?: string;
-  contact?: string;
-};
+// type UserType = {
+//   username: string;
+//   email: string;
+//   about: string;
+//   isAdmin: boolean;
+//   image?: string;
+//   _id?: string;
+//   city?: string;
+//   contact?: string;
+// };
 
 interface ThriftState {
   user: UserType | null;
@@ -65,4 +66,17 @@ export const ThriftContextProvider: React.FC<ThriftContextProviderProps> = ({
       {children}
     </ThriftContext.Provider>
   );
+};
+
+// Create a custom hook to use the ThriftContext
+export const useThriftContext = () => {
+  const context = useContext(ThriftContext);
+
+  if (context === undefined) {
+    throw new Error(
+      "useThriftContext must be used within a ThriftContextProvider"
+    );
+  }
+
+  return context;
 };

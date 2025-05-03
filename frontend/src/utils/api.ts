@@ -1,4 +1,3 @@
-
 import axiosInstance from "./axios"
 import { AxiosResponse } from 'axios';
 
@@ -19,7 +18,7 @@ type productPayloadType = {
     owner:string,
     image:string,
     price:string,
-    condition:string,
+    condition:string,   
     gender:string,
     city:string,
     lat: number;
@@ -30,21 +29,21 @@ type productPayloadType = {
     boosted?: boolean;
     boostDays?: number;
 }
-
+ 
 
 type commentPayload = {
     text:string,
     user:string,
     product:string
 }
-type transactionPayload={
-    seller:string,
-    buyer:string,
-    product:string,
-    totalPrice:number,
-    quantity:number,
+// type transactionPayload={
+//     seller:string,
+//     buyer:string,
+//     product:string,
+//     totalPrice:number,
+//     quantity:number,
 
-}
+// }
 type ChatRoomPayload = {
     userId: string;
     recipientId: string;
@@ -57,6 +56,15 @@ type CheckoutPayload ={
     boostDays?: number;
 }
 
+type userUpdatePayload = {
+    username?: string;
+    email?: string;
+    city?: string;
+    contact?: string;
+    about?: string;
+    image?: string;
+}
+
 // auth routes 
 export const loginApi = (data:loginPayload)=>axiosInstance.post("/auth/login",data)
 export const signUpApi = (data:registerPayload)=>axiosInstance.post("/auth/register",data)
@@ -65,8 +73,8 @@ export const logOut = ()=>axiosInstance.post("/auth/logout")
 export const verifyIfEmailConfirmationTokenIsValidApi=(hash:string)=>axiosInstance.post(`/auth/verifyConfirmationEmailHash`,{hash})
 export const confirmEmailApi= (email:string,hash:string)=>axiosInstance.post("/auth/confirmEmail",{hash,email});
 export const verifyAccountApi = (email:string)=>axiosInstance.post("/auth/verifyAccount",{email})
-export const updateUserApi =(data) =>axiosInstance.put("/user",data)
-export const sentConfirmationlinkApi =(email)=>axiosInstance.post("/auth/sentConfirmationlink",{email})
+export const updateUserApi = (data: userUpdatePayload) => axiosInstance.put("/user", data);
+export const sentConfirmationlinkApi =(email:string)=>axiosInstance.post("/auth/sentConfirmationlink",{email})
 
 
 // category routes
@@ -100,7 +108,7 @@ export const getCommentOfProductApi = (productId:string)=>axiosInstance.get(`/co
 // transaction route 
 
 
-export const createTransactionApi=(data:transactionPayload)=>axiosInstance.post("/transaction/create",data)
+// export const createTransactionApi=(data:transactionPayload)=>axiosInstance.post("/transaction/create",data)
 export const getTransactionForBuyerApi=(userId:true)=>axiosInstance.get(`/transaction/user?userId=${userId}&buyer=true`)
 export const getTransactionForSellerApi=(userId:true)=>axiosInstance.get(`/transaction/user?userId=${userId}&seller=true`)
 

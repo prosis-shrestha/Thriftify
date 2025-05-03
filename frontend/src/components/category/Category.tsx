@@ -1,4 +1,4 @@
-import CategoryItem from "./CategoryItem/CategoryItem";
+import CategoryItem from "./CategoryItem/CategoryItem.tsx";
 import styles from "./category.module.css";
 // import {products} from "../../utils/Data"
 import { allCategoryApi } from "../../utils/api";
@@ -21,8 +21,8 @@ const Category = () => {
   };
   return (
     <div className={styles.Category}>
-      {allCategory.map((product) => {
-        return <CategoryItem key={product._id} product={product} />;
+      {allCategory.map((product, index) => {
+        return <CategoryItem key={index} product={product} />;
       })}
     </div>
   );

@@ -1,12 +1,13 @@
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
-import styles from "./myProducts.module.css";
+import styles from "./my-products.module.css";
 import { getAllProductApi, updateProductApi } from "../../utils/api";
-import ProductItem from "../../components/productItem/ProductItem";
-import { ThriftContext } from "../../context/Context";
+import ProductItem from "../../components/ProductItem/ProductItem";
+import { useThriftContext } from "../../context/Context";
 import { ripples } from "ldrs";
 import PopUp from "../../components/PopUp/PopUp";
+import { ProductType } from "../../utils/type";
 
 const MyProducts = () => {
   const navigate = useNavigate();
@@ -14,11 +15,11 @@ const MyProducts = () => {
   ripples.register();
   const {
     state: { user },
-  } = useContext(ThriftContext);
-  const [myProducts, setMyProducts] = useState([]);
+  } = useThriftContext();
+  const [myProducts, setMyProducts] = useState<ProductType[]>([]);
   const [loading, setLoading] = useState(false);
-  const [selectedProducts, setSelectedProducts] = useState([]);
-  const [soldProducts, setSoldProducts] = useState([]);
+  const [selectedProductIds, setSelectedProductIds] = useState<string[]>([]);
+  const [soldProducts, setSoldProducts] = useState<ProductType[]>([]);
   const [showPopup, setShowPopup] = useState(false);
   const [activeTab, setActiveTab] = useState("current");
 
@@ -33,9 +34,13 @@ const MyProducts = () => {
     try {
       const { status, data } = await getAllProductApi();
       if (status === 200) {
-        const allProducts = data.message;
+        const allProducts: ProductType[] = data.message;
         const userProducts = user
-          ? allProducts.filter((product) => product.owner._id === user._id)
+          ? allProducts.filter(
+              (product) =>
+                typeof product.owner === "object" &&
+                product.owner._id === user._id
+            )
           : [];
         setMyProducts(userProducts.filter((product) => !product.sold));
         setSoldProducts(userProducts.filter((product) => product.sold));
@@ -49,8 +54,8 @@ const MyProducts = () => {
     }
   };
 
-  const handleSelectProduct = (productId) => {
-    setSelectedProducts((prevSelected) => {
+  const handleSelectProduct = (productId: string) => {
+    setSelectedProductIds((prevSelected) => {
       if (prevSelected.includes(productId)) {
         return prevSelected.filter((id) => id !== productId);
       } else {
@@ -61,27 +66,30 @@ const MyProducts = () => {
 
   const handleConfirmSold = async () => {
     try {
-      for (const productId of selectedProducts) {
+      for (const productId of selectedProductIds) {
         const response = await updateProductApi(productId, { sold: true });
         console.log("Product updated:", response.data);
       }
       fetchProducts();
     } catch (error) {
-      console.error("Error updating product:", error.response.data);
+      console.error("Error updating product:", (error as any).response?.data);
     } finally {
-      setSelectedProducts([]);
+      setSelectedProductIds([]);
       setShowPopup(false);
     }
   };
 
   const handleBoostItems = () => {
-    if (selectedProducts.length === 0) {
+    if (selectedProductIds.length === 0) {
       alert("Select any Product");
       return;
     }
 
     const productsToBoost = myProducts.filter(
-      (product) => selectedProducts.includes(product._id) && !product.boosted
+      (product) =>
+        product._id &&
+        selectedProductIds.includes(product._id) &&
+        !product.boosted
     );
 
     if (productsToBoost.length === 0) {
@@ -124,7 +132,11 @@ const MyProducts = () => {
                   key={product._id}
                   productItem={product}
                   handleSelectProduct={handleSelectProduct}
-                  isSelected={selectedProducts.includes(product._id)}
+                  isSelected={
+                    product._id
+                      ? selectedProductIds.includes(product._id)
+                      : false
+                  }
                   showCheckbox={true}
                 />
               ))
@@ -136,6 +148,8 @@ const MyProducts = () => {
               <ProductItem
                 key={product._id}
                 productItem={product}
+                isSelected={false}
+                handleSelectProduct={() => {}}
                 showCheckbox={false}
               />
             ))
@@ -164,7 +178,7 @@ const MyProducts = () => {
         <PopUp
           onConfirm={handleConfirmSold}
           onCancel={() => setShowPopup(false)}
-          selectedProducts={selectedProducts}
+          selectedProducts={selectedProductIds as any}
         />
       )}
     </>
