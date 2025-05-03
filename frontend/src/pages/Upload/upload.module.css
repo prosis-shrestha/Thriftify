@@ -1,0 +1,134 @@
+.uploadContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.formHeader {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.formHeader svg {
+  font-size: 2rem;
+  color: var(--main_color);
+}
+.uploadHeading {
+  color: var(--main_color);
+  font-size: x-large;
+  font-weight: 500;
+}
+
+.form {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50vw;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.form label {
+  font-size: 11px;
+  color: rgb(173, 173, 173);
+}
+.form input::placeholder {
+  font-size: 12px;
+  color: rgb(201, 201, 201);
+}
+.inputItem {
+  /* background-color: rgb(232, 232, 255); */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+}
+.inputItem input {
+  width: 100%;
+}
+.priceInputItem {
+  display: flex;
+  gap: 12px;
+}
+.genderInput {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.priceInput {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.priceInput input {
+  width: 100%;
+}
+select {
+  color: var(--border_color);
+}
+input,
+select {
+  padding: 10px;
+  outline: none;
+  border: 1px solid var(--border_color);
+  border-radius: 5px;
+  font: 12px;
+}
+.selectOption {
+  color: rgb(173, 173, 173);
+}
+
+.uploadImage {
+  /* background-color: var(--border_color); */
+  /* background-color: #dddee196;; */
+  height: 70px;
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid var(--border_color);
+  cursor: pointer;
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+}
+.uploadImage:hover {
+  background-color: #f5f5f5;
+}
+.uploadIcon {
+  font-size: 25px;
+  color: var(--border_color);
+}
+.uploadImage p {
+  font-size: 10px;
+  color: rgb(173, 173, 173);
+}
+.uploadBtn {
+  margin: 12px;
+  padding: 10px 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: var(--main_color);
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+}
+.locIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border_color);
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  color: var(--main_color);
+}
+.locIcon:hover {
+  background-color: #f5f5f5;
+}
+.lIcon {
+  font-size: x-large;
+}
