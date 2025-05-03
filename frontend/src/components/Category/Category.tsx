@@ -1,4 +1,4 @@
-import CategoryItem from "./CategoryItem/CategoryItem.tsx";
+import CategoryItem from "./CategoryItem/CategoryItem";
 import styles from "./category.module.css";
 // import {products} from "../../utils/Data"
 import { allCategoryApi } from "../../utils/api";

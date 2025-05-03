@@ -6,7 +6,7 @@ import SideBar from "../../components/SideBar/SideBar";
 import styles from "./all-products.module.css";
 // import { BsSearch } from "react-icons/bs";
 import { getAllProductApi, getProductsbyCategoryApi } from "../../utils/api";
-import ProductItem from "../../components/ProductItem/ProductItem.tsx";
+import ProductItem from "../../components/ProductItem/ProductItem";
 import { useLocation } from "react-router-dom";
 // import SearchModal from "../../layouts/modal/SeachModal/SearchModal";
 import { useThriftContext } from "../../context/Context";
