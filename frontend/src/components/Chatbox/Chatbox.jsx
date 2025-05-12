@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './Chatbox.css';
+import './chatbox.css';
 
 const Chatbox = () => {
     const [isOpen, setIsOpen] = useState(false);
