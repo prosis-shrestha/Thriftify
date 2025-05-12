@@ -48,7 +48,7 @@ const Signup = () => {
     <div className={styles.AuthWrapper}>
       <img
         onClick={() => navigate("/")}
-        src="/src/assets/logo.png"
+        src="/logo.png"
         className={styles.logo}
       />
       <div className={styles.login_main_box}>

@@ -4,6 +4,7 @@ import { useThriftContext } from "../../context/Context";
 import { verifyAccountApi } from "../../utils/api";
 import { useNavigate } from "react-router";
 import { useAlert } from "../../hooks/useAlert";
+import VerifyImg from "../../assets/verify.png";
 const Verify = () => {
   const { dispatch } = useThriftContext();
   const [email, setEmail] = useState("");
@@ -38,11 +39,7 @@ const Verify = () => {
 
   return (
     <div className={styles.verify_container}>
-      <img
-        src="/src/assets/verify.png"
-        alt="verify"
-        className={styles.verifyImg}
-      />
+      <img src={VerifyImg} alt="verify" className={styles.verifyImg} />
 
       <div className={styles.verify_box}>
         <h2 className={styles.verify_heading}>Verify your email</h2>

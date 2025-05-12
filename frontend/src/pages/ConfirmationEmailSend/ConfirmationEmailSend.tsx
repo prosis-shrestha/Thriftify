@@ -1,5 +1,6 @@
 import styles from "./confirmation-email-send.module.css";
 import { useNavigate } from "react-router-dom";
+import EmailSent from "../../assets/emailSent.png";
 
 const Confirmation_email_send = () => {
   const navigate = useNavigate();
@@ -7,11 +8,7 @@ const Confirmation_email_send = () => {
   return (
     <div className={styles.confirmation_email_send_container}>
       <div className={styles.emailSend_Wrapper}>
-        <img
-          src="/src/assets/emailSent.png"
-          alt="emailSent"
-          className={styles.emailSentImg}
-        />
+        <img src={EmailSent} alt="emailSent" className={styles.emailSentImg} />
         <h2>Check your mail</h2>
         <p className={styles.checkPara}>
           Please check your email. we have sent an email that contains a link to

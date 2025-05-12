@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './chatbox.css';
+import AiStar from '../../assets/ai_star.png';
 
 const Chatbox = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +62,7 @@ const Chatbox = () => {
     return (
         <div className="chatbox">
             {/* <div className="chatbox__button" onClick={toggleState}> */}
-            <button className="chatbox__button" onClick={toggleState}><img src="/src/assets/ai_star.png" className="chat_img" /></button>
+            <button className="chatbox__button" onClick={toggleState}><img src={AiStar} className="chat_img" /></button>
             {/* </div> */}
             {isOpen && (
                 <div className="chatbox__support" ref={chatboxRef}>

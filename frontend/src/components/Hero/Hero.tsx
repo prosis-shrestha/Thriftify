@@ -1,11 +1,12 @@
 import styles from "./hero.module.css";
 import { Link } from "react-scroll";
+import HeroImg from "../../assets/hero.png";
 
 const Hero = () => {
   return (
     <div className={styles.hero}>
       <div className={styles.heroBg}></div>
-      <img src="/src/assets/hero.png" className={styles.animation} />
+      <img src={HeroImg} className={styles.animation} />
       <div className={styles.hero_left}>
         <h1 className={styles.hero_heading}>THRIFTIFY</h1>
         <div className={styles.para}>

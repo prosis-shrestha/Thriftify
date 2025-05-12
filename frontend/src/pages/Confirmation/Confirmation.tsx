@@ -9,6 +9,8 @@ import {
 } from "../../utils/api";
 import { useThriftContext } from "../../context/Context";
 import { useAlert } from "../../hooks/useAlert";
+import Confirm from "../../assets/confirm.png";
+
 const Confirmation = () => {
   const location = useLocation();
   const { dispatch } = useThriftContext();
@@ -97,11 +99,7 @@ const Confirmation = () => {
   return (
     <div className={styles.confirmation_container}>
       <div className={styles.confirmation_box}>
-        <img
-          src="/src/assets/confirm.png"
-          alt="confirm"
-          className={styles.confirm_img}
-        />
+        <img src={Confirm} alt="confirm" className={styles.confirm_img} />
         <p>Great!! Confirm your email and unlock the power of Thriftify </p>
         {isExpired || invalidLink ? (
           <button

@@ -50,7 +50,7 @@ const Login = () => {
     <div className={styles.AuthWrapper}>
       <img
         onClick={() => nagivate("/")}
-        src="/src/assets/logo.png"
+        src="/logo.png"
         className={styles.logo}
       />
 

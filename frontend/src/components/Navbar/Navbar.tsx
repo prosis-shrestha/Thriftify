@@ -13,11 +13,7 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <Link to={"/"} className={styles.logo}>
-        <img
-          src="/src/assets/logo.png"
-          alt="logo"
-          className={styles.logo_img}
-        />
+        <img src="/logo.png" alt="logo" className={styles.logo_img} />
       </Link>
 
       <div className={styles.others}>
