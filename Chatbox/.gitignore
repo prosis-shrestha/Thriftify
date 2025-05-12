@@ -27,7 +27,7 @@ build/
 .eggs/
 
 # NLTK data
-nltk_data/
+# nltk_data/
 
 # Misc
 .DS_Store
