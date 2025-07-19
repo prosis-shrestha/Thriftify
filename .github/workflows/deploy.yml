@@ -25,3 +25,6 @@ jobs:
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: Trigger Render Deploy Hook
+        run: curl -X GET "${{ secrets.RENDER_DEPLOY_HOOK_URL }}"
