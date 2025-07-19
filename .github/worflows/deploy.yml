@@ -1,9 +1,9 @@
 name: CI/CD Pipeline
-#test
+
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-deploy:
